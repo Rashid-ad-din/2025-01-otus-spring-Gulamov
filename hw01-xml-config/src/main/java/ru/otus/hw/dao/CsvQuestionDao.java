@@ -3,7 +3,7 @@ package ru.otus.hw.dao;
 import com.opencsv.bean.CsvToBean;
 import com.opencsv.bean.CsvToBeanBuilder;
 import lombok.RequiredArgsConstructor;
-import ru.otus.hw.config.TestFileNameProvider;
+import ru.otus.hw.config.FileNameProvider;
 import ru.otus.hw.dao.dto.QuestionDto;
 import ru.otus.hw.domain.Question;
 import ru.otus.hw.exceptions.QuestionReadException;
@@ -18,12 +18,12 @@ import java.util.stream.Collectors;
 
 @RequiredArgsConstructor
 public class CsvQuestionDao implements QuestionDao {
-    private final TestFileNameProvider fileNameProvider;
+    private final FileNameProvider fileNameProvider;
 
     @Override
     public List<Question> findAll() {
 
-        String fileName = fileNameProvider.getTestFileName();
+        String fileName = fileNameProvider.getFileName();
         ClassLoader classLoader = getClass().getClassLoader();
         if (fileName == null) {
             throw new QuestionReadException("Отустствует файл с вопросами");

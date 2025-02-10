@@ -21,7 +21,7 @@ public class QuestionServiceTest {
 
     @DisplayName("Testing QuestionService")
     @Test
-    void executeTest() {
+    void execute() {
         List<Question> mockQuestions = getQuestions();
 
         when(questionDao.findAll()).thenReturn(mockQuestions);

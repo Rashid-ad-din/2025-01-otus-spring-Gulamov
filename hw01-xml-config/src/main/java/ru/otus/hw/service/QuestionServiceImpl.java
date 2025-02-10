@@ -14,7 +14,7 @@ public class QuestionServiceImpl implements QuestionService {
     private final QuestionDao questionDao;
 
     @Override
-    public void executeTest() {
+    public void execute() {
         ioService.printLine("");
         ioService.printFormattedLine("Please answer the questions below%n");
 

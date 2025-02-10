@@ -9,6 +9,6 @@ public class RunnerServiceImpl implements RunnerService {
 
     @Override
     public void run() {
-        questionService.executeTest();
+        questionService.execute();
     }
 }

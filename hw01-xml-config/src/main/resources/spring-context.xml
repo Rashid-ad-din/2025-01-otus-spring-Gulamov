@@ -8,17 +8,17 @@
         http://www.springframework.org/schema/util
         https://www.springframework.org/schema/util/spring-util.xsd">
 
-    <bean id="testRunnerService" class="ru.otus.hw.service.RunnerServiceImpl">
-        <constructor-arg name="testService" ref="testService"/>
+    <bean id="runnerService" class="ru.otus.hw.service.RunnerServiceImpl">
+        <constructor-arg name="questionService" ref="questionService"/>
     </bean>
 
-    <bean id="testService" class="ru.otus.hw.service.QuestionServiceImpl">
+    <bean id="questionService" class="ru.otus.hw.service.QuestionServiceImpl">
         <constructor-arg name="ioService" ref="ioService"/>
         <constructor-arg name="questionDao" ref="csvQuestionDao"/>
     </bean>
 
     <bean id="csvQuestionDao" class="ru.otus.hw.dao.CsvQuestionDao">
-        <constructor-arg name="fileNameProvider" ref="testFileNameProvider"/>
+        <constructor-arg name="fileNameProvider" ref="fileNameProvider"/>
     </bean>
 
     <bean id="ioService" class="ru.otus.hw.service.StreamsIOService">
@@ -27,8 +27,8 @@
         </constructor-arg>
     </bean>
 
-    <bean id="testFileNameProvider" class="ru.otus.hw.config.AppProperties">
-        <constructor-arg name="testFileName" value="questions.csv"/>
+    <bean id="fileNameProvider" class="ru.otus.hw.config.AppProperties">
+        <constructor-arg name="fileName" value="questions.csv"/>
     </bean>
 
 </beans>
