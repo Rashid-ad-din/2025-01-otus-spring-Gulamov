@@ -1,9 +1,6 @@
 package ru.otus.hw.service;
 
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
@@ -17,16 +14,12 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
-public class TestService {
+public class QuestionServiceTest {
 
     @Mock
     private QuestionDao questionDao;
 
-    @BeforeAll
-    static void setUp() {
-        System.out.println("TestRunnerService.setUp");
-    }
-
+    @DisplayName("Testing QuestionService")
     @Test
     void executeTest() {
         List<Question> mockQuestions = getQuestions();
@@ -47,8 +40,6 @@ public class TestService {
         assertTrue(result.get(0).answers().get(0).isCorrect());
 
         verify(questionDao, times(1)).findAll();
-
-        System.out.println("Executing testService.executeTest();");
     }
 
     private static List<Question> getQuestions() {
@@ -68,13 +59,4 @@ public class TestService {
         );
     }
 
-    @AfterEach
-    void tearDown() {
-        System.out.println("TestRunnerService.tearDown");
-    }
-
-    @AfterAll
-    static void tearDownAll() {
-        System.out.println("TestRunnerService.tearDownAll");
-    }
 }

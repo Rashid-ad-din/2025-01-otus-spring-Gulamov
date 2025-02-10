@@ -7,7 +7,7 @@ import ru.otus.hw.domain.Question;
 import java.util.List;
 
 @RequiredArgsConstructor
-public class TestServiceImpl implements TestService {
+public class QuestionServiceImpl implements QuestionService {
 
     private final IOService ioService;
 

@@ -8,11 +8,11 @@
         http://www.springframework.org/schema/util
         https://www.springframework.org/schema/util/spring-util.xsd">
 
-    <bean id="testRunnerService" class="ru.otus.hw.service.TestRunnerServiceImpl">
+    <bean id="testRunnerService" class="ru.otus.hw.service.RunnerServiceImpl">
         <constructor-arg name="testService" ref="testService"/>
     </bean>
 
-    <bean id="testService" class="ru.otus.hw.service.TestServiceImpl">
+    <bean id="testService" class="ru.otus.hw.service.QuestionServiceImpl">
         <constructor-arg name="ioService" ref="ioService"/>
         <constructor-arg name="questionDao" ref="csvQuestionDao"/>
     </bean>
