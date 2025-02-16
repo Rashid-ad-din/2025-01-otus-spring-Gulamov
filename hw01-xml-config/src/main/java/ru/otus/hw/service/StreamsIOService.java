@@ -1,13 +1,17 @@
 package ru.otus.hw.service;
 
+import org.springframework.stereotype.Service;
+
 import java.io.PrintStream;
 
+@Service
 public class StreamsIOService implements IOService {
     private final PrintStream printStream;
 
     public StreamsIOService(PrintStream printStream) {
 
         this.printStream = printStream;
+        System.out.println();
     }
 
     @Override

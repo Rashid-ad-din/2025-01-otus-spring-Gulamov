@@ -1,14 +1,19 @@
 package ru.otus.hw.config;
 
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.Getter;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 
-@Getter
-@AllArgsConstructor
+
+@Component
 @Data
 public class AppProperties implements FileNameProvider {
+
     private String fileName;
+
+    public AppProperties(@Value("${file.name}") String fileName) {
+        this.fileName = fileName;
+    }
 
 }
