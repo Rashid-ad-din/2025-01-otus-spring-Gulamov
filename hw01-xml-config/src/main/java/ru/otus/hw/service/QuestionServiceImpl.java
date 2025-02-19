@@ -57,6 +57,7 @@ public class QuestionServiceImpl implements QuestionService {
         ioService.printLine(question.text());
         ioService.printFormattedLine(question.showAnswers());
         List<Answer> answersList = question.answers();
+
         int answerValue = 0;
         ioService.printLine("Your answer is: ");
         while (true) {
